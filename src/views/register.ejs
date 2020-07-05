@@ -1,0 +1,39 @@
+<%- include('includes/header'); %>
+<%- include('includes/navbar'); %>
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-3">
+        <h1 class="text-center">Register</h1>
+        <p class="text-center lead">Please fill the fields bellow to complete the registration</p>
+        <div class="row">
+          <%- include('includes/messages'); %>
+            <form class="container-fluid" action="/register" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="name" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter your full name" />
+              </div>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="test" class="form-control" id="email" name="email" aria-describedby="emailHelp" />
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-lg-3">Password</label>
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="password" class="form-control" id="password" name="password" class="col-lg-3" placeholder="Password"/>
+                    </div>
+                    <div class="col">
+                      <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"  class="col-lg-3" placeholder="Confirm"/>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+
+<%- include('includes/footer'); %>

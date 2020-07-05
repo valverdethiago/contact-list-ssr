@@ -1,0 +1,27 @@
+<% 
+if (errors && errors.length > 0) { 
+%>
+    <div class="col my-3">
+        <div class="alert alert-danger">
+            <ul>
+                <% for(let error of errors) { %>
+                <li><%=error%></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+<% 
+} 
+if (success && success.length > 0) { %>
+    <div class="col my-3">
+        <div class="alert alert-success">
+            <ul>
+                <% for(let suc of success) { %>
+                <li><%=suc%></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+<% 
+} 
+%>

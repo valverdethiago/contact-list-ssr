@@ -1,0 +1,20 @@
+<%- include('includes/header'); %>
+<%- include('includes/navbar'); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-5">
+      <h1 class="text-center">Welcome to your contact list app.</h1>
+      <div class="row">
+        <%- include('includes/messages'); %>
+      </div>
+      <% if (!user) { %>
+      <p class="text-center lead">Please, login if you are an already registered user or create an account if you are new up here.</p>
+      <% } %>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer'); %>
