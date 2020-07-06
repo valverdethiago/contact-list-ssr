@@ -1,0 +1,42 @@
+<%- include('includes/header'); %>
+<%- include('includes/navbar'); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-5">
+      <h1 class="text-center">Welcome to your contact list app.</h1>
+      <div class="row">
+        <%- include('includes/messages'); %>
+      </div>
+      <% if (contactList.length == 0 ) { %>
+      <p class="text-center lead">You don't have any contacts yet. Please click <a href="/contact/new">here</a> to create the first.</p>
+      <% 
+      }  else {      
+      %>
+      <table class="table table-striped table-hovered">
+        <thead class="thead-dark">
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">PhoneNumber</th>
+          <th scope="col"></th>
+        </thead>
+        <tbody>
+          <% for(let contact of contactList) { %>
+            <tr>
+              <td><%=contact.lastName + ', '+contact.firstName%></td>
+              <td><%=contact.email%></td>
+              <td><%=contact.phoneNumber%></td>
+              <td><a href="/contact/<%=contact.id%>" class="badge badge-secondary">Edit</a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <a href="/contact/new" class="badge badge-primary">New</a>
+      <% } %>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('includes/footer'); %>

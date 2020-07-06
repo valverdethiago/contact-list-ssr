@@ -19,7 +19,7 @@ exports.login = async function(req, res) {
         req.flash('success', `User ${user.name} logged in successfully.`);
         req.session.user = user;
         req.session.save(function() {
-            return res.redirect('/');
+            return res.redirect('/contacts');
         });
     }
     catch(e) {
